@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://by20ip1l4xy00"]
+
+[ext_resource type="Script" uid="uid://bpp6i2uhmkhuy" path="res://tankMonkey.gd" id="1_cngnw"]
+[ext_resource type="Texture2D" uid="uid://d4gkm7ms8s47l" path="res://icon.svg" id="2_4v335"]
+[ext_resource type="AudioStream" uid="uid://cvvhjvyoe2c5h" path="res://Targeting1.wav" id="3_4v335"]
+[ext_resource type="AudioStream" uid="uid://8pixq45s1r64" path="res://Shoot1.wav" id="4_gtvr4"]
+
+[sub_resource type="Animation" id="Animation_oxqqw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gtvr4"]
+resource_name = "blinkIndicator"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.40000004, 0.50000006, 0.6000001, 0.70000005, 0.8000001, 0.9, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6, 1.6999999, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0), Color(1, 1, 1, 0.59000003), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbvix"]
+_data = {
+&"RESET": SubResource("Animation_oxqqw"),
+&"blinkIndicator": SubResource("Animation_gtvr4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v335"]
+
+[sub_resource type="Animation" id="Animation_ujrj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+
+[sub_resource type="Animation" id="Animation_lbvix"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+
+[sub_resource type="Animation" id="Animation_hml1g"]
+resource_name = "trun"
+length = 1.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.01),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.5707964, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e04a1"]
+_data = {
+&"RESET": SubResource("Animation_ujrj8"),
+&"intro": SubResource("Animation_lbvix"),
+&"turn": SubResource("Animation_hml1g")
+}
+
+[node name="tankMonkey" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_cngnw")
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.39999995, 0.39999995)
+
+[node name="Icon" type="Sprite2D" parent="Node2D"]
+scale = Vector2(2.5000002, 2.5000002)
+texture = ExtResource("2_4v335")
+
+[node name="Icon3" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.6125002, 1.6125002)
+texture = ExtResource("2_4v335")
+
+[node name="Icon2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-224.75006, 0)
+scale = Vector2(1.9570316, 0.46875006)
+texture = ExtResource("2_4v335")
+
+[node name="Icon4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-396.50006, 0)
+scale = Vector2(0.8046878, 1.1171876)
+texture = ExtResource("2_4v335")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.80066
+offset_top = -98.39998
+offset_right = -323.20245
+offset_bottom = 113.20001
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_lbvix")
+}
+
+[node name="chargeSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4v335")
+volume_db = -2.0
+
+[node name="shotSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gtvr4")
+volume_db = -2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.4, 6.4)
+shape = SubResource("RectangleShape2D_4v335")
+
+[node name="tankAnims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e04a1")
+}
+autoplay = "intro"

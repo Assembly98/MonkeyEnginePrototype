@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3w0c1ylvixcu"
+path="res://.godot/imported/Floria Fields  Kirby Air Riders OST.mp3-d26ed2d69caf8e47b1cbb18bf90199a7.mp3str"
+
+[deps]
+
+source_file="res://Floria Fields  Kirby Air Riders OST.mp3"
+dest_files=["res://.godot/imported/Floria Fields  Kirby Air Riders OST.mp3-d26ed2d69caf8e47b1cbb18bf90199a7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

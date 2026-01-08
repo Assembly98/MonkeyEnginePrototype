@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4iwtvaugv3y8"]
+
+[ext_resource type="Script" uid="uid://ni0o8m7ttxyw" path="res://gridSnapper.gd" id="1_3da4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_invj6"]
+
+[node name="gridSnaper" type="Area2D"]
+process_mode = 3
+script = ExtResource("1_3da4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(14, 14)
+shape = SubResource("RectangleShape2D_invj6")
+debug_color = Color(7.315874e-06, 0.6226142, 0.7280956, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

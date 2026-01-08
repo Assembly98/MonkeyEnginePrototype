@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu5f4d00al340"
+path="res://.godot/imported/30 Metal Sonic.mp3-e1bccbb14892ba87c63f24105355bf61.mp3str"
+
+[deps]
+
+source_file="res://30 Metal Sonic.mp3"
+dest_files=["res://.godot/imported/30 Metal Sonic.mp3-e1bccbb14892ba87c63f24105355bf61.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

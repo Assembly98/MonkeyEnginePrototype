@@ -1,0 +1,84 @@
+[gd_scene load_steps=17 format=3 uid="uid://ci7ag8tpsfrxw"]
+
+[ext_resource type="Script" uid="uid://ca80woar80c1v" path="res://aMonkeyScript.gd" id="1_6lhdi"]
+[ext_resource type="Texture2D" uid="uid://vuwx7p1f8y6k" path="res://Aviator Monkey/sprites/aMonkey1.png" id="2_rgqfc"]
+[ext_resource type="Texture2D" uid="uid://c35gfbfi3non7" path="res://Aviator Monkey/sprites/aMonkey2.png" id="3_xyuh1"]
+[ext_resource type="Texture2D" uid="uid://clsjqdopv4s5g" path="res://Aviator Monkey/sprites/aMonkey3.png" id="4_vltw7"]
+[ext_resource type="Texture2D" uid="uid://ccrj8scj2jnpv" path="res://Aviator Monkey/sprites/aMonkey4.png" id="5_ny2j5"]
+[ext_resource type="Texture2D" uid="uid://cwejsjywbffgn" path="res://Aviator Monkey/sprites/aMonkey5.png" id="6_xch3g"]
+[ext_resource type="Texture2D" uid="uid://rvfyg46i8boi" path="res://Aviator Monkey/sprites/aMonkey6.png" id="7_dojnn"]
+[ext_resource type="Texture2D" uid="uid://dmtwnphr55iii" path="res://Aviator Monkey/sprites/aMonkey7.png" id="8_xx5tb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayscy"]
+atlas = ExtResource("2_rgqfc")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s457g"]
+atlas = ExtResource("3_xyuh1")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qrap"]
+atlas = ExtResource("4_vltw7")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbgks"]
+atlas = ExtResource("5_ny2j5")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8grk"]
+atlas = ExtResource("6_xch3g")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv8p8"]
+atlas = ExtResource("7_dojnn")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2fxn"]
+atlas = ExtResource("8_xx5tb")
+region = Rect2(142, 50, 300, 310)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfe1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayscy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s457g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qrap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s457g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbgks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8grk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv8p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2fxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s457g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AviatorMonkey" type="CharacterBody2D"]
+script = ExtResource("1_6lhdi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+sprite_frames = SubResource("SpriteFrames_xfe1j")
+frame_progress = 0.9414165
+speed_scale = 50.0
